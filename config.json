@@ -1,0 +1,22 @@
+{
+    "websites": [
+        {
+            "url": "https://www.google.com",
+            "name": "Google",
+            "interval": 60
+        },
+        {
+            "url": "https://www.github.com",
+            "name": "GitHub",
+            "interval": 30
+        },
+        {
+            "url": "https://www.example.com",
+            "name": "Example",
+            "interval": 45
+        }
+    ],
+    "timeout": 10,
+    "max_retries": 3,
+    "retry_delay": 5
+} 

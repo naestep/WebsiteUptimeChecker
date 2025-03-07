@@ -15,16 +15,25 @@ import threading
 import time
 from datetime import datetime
 from typing import Dict, Any, Optional, List
+from pathlib import Path
 
 import requests
 from requests.exceptions import RequestException, Timeout, ConnectionError, HTTPError
+
+# Determine log file path (use logs directory if it exists)
+logs_dir = Path("logs")
+if logs_dir.exists() or os.environ.get("DOCKER"):
+    logs_dir.mkdir(exist_ok=True)
+    log_file = logs_dir / "uptime_log.txt"
+else:
+    log_file = Path("uptime_log.txt")
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('uptime_log.txt'),
+        logging.FileHandler(log_file),
         logging.StreamHandler(sys.stdout)
     ]
 )

@@ -10,7 +10,6 @@ A Python script that periodically checks the availability of multiple websites, 
 - Implements retry logic (up to 3 attempts by default)
 - Handles common errors (timeouts, connection failures, HTTP errors)
 - Configurable via a JSON configuration file
-- Optional email notifications for downtime events
 - Docker support for containerized deployment
 
 ## Project Structure
